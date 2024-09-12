@@ -86,7 +86,7 @@ def depthFirstSearch(problem: SearchProblem):
     print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
     """
-    stack = util.Stack()
+    stack = Stack()
     visited = []
     directions = []
     def dfs(node):
