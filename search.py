@@ -17,7 +17,7 @@ In search.py, you will implement generic search algorithms which are called by
 Pacman agents (in searchAgents.py).
 """
 
-import util
+from  util import Stack, Queue, PriorityQueue
 
 class SearchProblem:
     """
@@ -86,13 +86,50 @@ def depthFirstSearch(problem: SearchProblem):
     print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
     """
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+      # Stack to store (current state, path to the state)
+    dfs_stack = Stack()
+    # Push the start state and an empty list representing the path to the state
+    dfs_stack.push((problem.getStartState(), []))
+    
+    # Set to store visited states
+    visited = set()
 
+    while not dfs_stack.isEmpty():
+        current_state, actions = dfs_stack.pop()
+
+        if problem.isGoalState(current_state):
+            return actions
+        
+        # If the state has not been visited, explore it
+        if current_state not in visited:
+            visited.add(current_state)
+            for successor, action, _ in problem.getSuccessors(current_state):
+                if successor not in visited:
+                    dfs_stack.push((successor, actions + [action]))
+
+    return []
+
+    
 def breadthFirstSearch(problem: SearchProblem):
     """Search the shallowest nodes in the search tree first."""
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+
+    # Queue to store (current state, path to the state)
+    bfs_queue = Queue()
+    bfs_queue.push((problem.getStartState(), []))
+    
+    visited = set()
+    visited.add(problem.getStartState())
+
+    while not bfs_queue.isEmpty():
+        current_state, actions = bfs_queue.pop()
+        if problem.isGoalState(current_state):
+            return actions
+        for successor, action, _ in problem.getSuccessors(current_state):
+            if successor not in visited:
+                visited.add(successor)
+                bfs_queue.push((successor, actions + [action]))
+    return []
+
 
 def uniformCostSearch(problem: SearchProblem):
     """Search the node of least total cost first."""
