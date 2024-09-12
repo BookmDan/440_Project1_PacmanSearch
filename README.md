@@ -10,7 +10,8 @@ For sanity check try:
 ```
 python pacman.py
 ```
-and you should see the following.
+and you should see the following:
+
 ![giphy2_logo](https://github.com/user-attachments/assets/e86308c5-f3ae-4eb5-89b6-62c756d832c4)
 
 To test the Pacman agent, first ensure everything is set up by running the following command:
