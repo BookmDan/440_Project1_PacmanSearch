@@ -18,6 +18,7 @@ Pacman agents (in searchAgents.py).
 """
 
 from  util import Stack, Queue, PriorityQueue
+import util
 
 class SearchProblem:
     """
@@ -148,9 +149,33 @@ def nullHeuristic(state, problem=None):
 
 def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    aStarQueue = util.PriorityQueue()
+    start = problem.getStartState()
+    
+    # Begin with starting node, visit and add to queue
+    aStarQueue.push((start, [], 0), heuristic(start, problem))
 
+    costs = {start: 0}
+
+    visited = set()
+
+    visited.add(start)
+
+    # For every node in the queue, obtain it, check if its the goal, then add its sucessors to the queue
+    while not aStarQueue.isEmpty():
+        current_state, actions, current_cost  = aStarQueue.pop()
+
+        if problem.isGoalState(current_state):
+            return actions
+        
+        for successor, action, step_cost in problem.getSuccessors(current_state):
+            new_cost = current_cost + step_cost
+
+            if successor not in costs or new_cost < costs[successor]:
+                costs[successor] = new_cost
+                f_value = new_cost + heuristic(successor, problem)
+                aStarQueue.push((successor, actions + [action], new_cost), f_value)
+    return []
 
 # Abbreviations
 bfs = breadthFirstSearch
