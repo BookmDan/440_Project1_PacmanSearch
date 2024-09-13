@@ -58,16 +58,32 @@ You should see something like this:
 
 As predicted, the BFS search takes a more wide-net search approach, first exploring the shallow paths, before eventually getting to the solution. BFS ensures shortest-path, because it explores all nodes at a given level before moving to deeper levels. BFS is also useful for solving the Eight Puzzle state problem because of its priority for finding the optimal state i.e. shortest path, as well as because of its quality for completeness, meaning BFS explores all nodes at the current level, which ensures that no potential solution is skipped. 
 
-8. A Search*: Implement the A* search algorithm in aStarSearch in search.py. A* uses a heuristic function, such as nullHeuristic.
+4. A Search*: Implement the A* search algorithm in aStarSearch in search.py. A* uses a heuristic function, such as nullHeuristic.
 
+Run A* with the following command:
+```
+python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic
+
+```
 Test A* with:
+```
+python autograder.py -q q4
+```
+<img width="574" alt="Screenshot 2024-09-13 at 9 25 41 AM" src="https://github.com/user-attachments/assets/588b43f2-d99c-4345-8924-ed18c08bcb19">
 
 
-3. Find Path to Closest Dot: Implement the function findPathToClosestDot in searchAgents.py. This function should guide Pacman to the nearest dot.
+8. Find Path to Closest Dot: Implement the function findPathToClosestDot in searchAgents.py. This function should guide Pacman to the nearest dot.
+Run ClosestDotSearchAgent with:
+```
+python pacman.py -l bigSearch -p ClosestDotSearchAgent -z .5
+```
 
 Test the Closest Dot Search Agent:
+```
+python autograder.py -q q8
+```
 
-4. 
+![closestdot](https://github.com/user-attachments/assets/aa267799-cf2f-481d-96c6-3dff364f1450)
 
 # Acknowledgements
 
