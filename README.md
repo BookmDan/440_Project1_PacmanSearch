@@ -63,7 +63,7 @@ As predicted, the BFS search takes a more wide-net search approach, first explor
 
 Run A* with the following command:
 ```
-python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic
+python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic --frameTime=0
 
 ```
 Test A* with:
@@ -72,6 +72,11 @@ python autograder.py -q q4
 ```
 <img width="574" alt="Screenshot 2024-09-13 at 9 25 41 AM" src="https://github.com/user-attachments/assets/588b43f2-d99c-4345-8924-ed18c08bcb19">
 
+A* works by weighing the combined state cost and a heuristic cost. The best choice of those available will be greedily chosen. A* requires a heuristic, as seen in the command to use fn=astar. A null heuristic in which the h(n) of: f(n) = g(n) + h(n), would be zero. This would just be a uniform Cost search, and is defined as default if no heuristic is given. If no heuristic is given for bigMaze, 620 nodes are expanded. With manhattan Heuristic, 549 nodes are expanded instead. Therefore, slightly faster.
+
+A* works with the use of a priority queue to sort all possible choices based on their f(n) value. Since a priority queue's value is its priority, nodes with a higher f(n) value have a higher priority and will be the next node explored. This optimizes the search and avoids redundant paths or paths that lead away from the objective. 
+
+The code works by checking all possible sucessors of the current state and pushing them into a priority queue. The next node to be visited is based on whatever is at the head of the queue. Thus, all possible nodes are being considered, but the next action is based on whatever is the best towards the goal state.
 
 ## 8. Find Path to Closest Dot: Implement the function findPathToClosestDot in searchAgents.py. This function should guide Pacman to the nearest dot.
 Run ClosestDotSearchAgent with:
