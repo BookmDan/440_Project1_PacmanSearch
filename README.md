@@ -28,8 +28,9 @@ We should see the below animation pop up.
 - pacman.py: The main game script that runs the Pacman simulation.
 
 # Tasks
-1. Depth-First Search (DFS): Implement the DFS algorithm in depthFirstSearch function in search.py. Make sure it avoids revisiting states. 
-
+## 1. Depth-First Search (DFS):
+  
+Implement the DFS algorithm in depthFirstSearch function in search.py. Make sure it avoids revisiting states. 
 By default the SearchAgent.py uses the Depth First Search(DFS) as the search function. 
 ```
 python pacman.py -l tinyMaze -p SearchAgent
@@ -44,7 +45,7 @@ It does seem to deeply explore one path before backtracking and consistently exp
 
 We expected a solution length of 130. For the mediumMaze we got a length of 146.
 
-2. Breadth-First Search
+##2. Breadth-First Search
 
 Test using the following 'fn=bfs':
 ```
@@ -58,7 +59,7 @@ You should see something like this:
 
 As predicted, the BFS search takes a more wide-net search approach, first exploring the shallow paths, before eventually getting to the solution. BFS ensures shortest-path, because it explores all nodes at a given level before moving to deeper levels. BFS is also useful for solving the Eight Puzzle state problem because of its priority for finding the optimal state i.e. shortest path, as well as because of its quality for completeness, meaning BFS explores all nodes at the current level, which ensures that no potential solution is skipped. 
 
-4. A Search*: Implement the A* search algorithm in aStarSearch in search.py. A* uses a heuristic function, such as nullHeuristic.
+## 4. A Search*: Implement the A* search algorithm in aStarSearch in search.py. A* uses a heuristic function, such as nullHeuristic.
 
 Run A* with the following command:
 ```
@@ -72,7 +73,7 @@ python autograder.py -q q4
 <img width="574" alt="Screenshot 2024-09-13 at 9 25 41 AM" src="https://github.com/user-attachments/assets/588b43f2-d99c-4345-8924-ed18c08bcb19">
 
 
-8. Find Path to Closest Dot: Implement the function findPathToClosestDot in searchAgents.py. This function should guide Pacman to the nearest dot.
+## 8. Find Path to Closest Dot: Implement the function findPathToClosestDot in searchAgents.py. This function should guide Pacman to the nearest dot.
 Run ClosestDotSearchAgent with:
 ```
 python pacman.py -l bigSearch -p ClosestDotSearchAgent -z .5
