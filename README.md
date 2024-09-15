@@ -57,7 +57,7 @@ You should see something like this:
 
 <img width="1108" alt="Screenshot 2024-09-12 at 2 43 52 PM" src="https://github.com/user-attachments/assets/eafc7924-2152-4746-82f8-9cf5c1f5cb43">
 
-As predicted, the BFS search takes a more wide-net search approach, first exploring the shallow paths, before eventually getting to the solution. BFS ensures shortest-path, because it explores all nodes at a given level before moving to deeper levels. BFS is also useful for solving the Eight Puzzle state problem because of its priority for finding the optimal state i.e. shortest path, as well as because of its quality for completeness, meaning BFS explores all nodes at the current level, which ensures that no potential solution is skipped. 
+As predicted, the BFS search takes a more wide-net search approach, first exploring the shallow paths, before eventually getting to the solution. BFS ensures shortest-path, because it explores all nodes at a given level before moving to deeper levels. BFS is also useful for solving the Eight Puzzle state problem because of its priority for finding the **optimal** state i.e. shortest path, as well as because of its quality for **completeness**, meaning BFS explores all nodes at the current level, which ensures that no potential solution is skipped. 
 
 ## 4. A Search*: 
 
