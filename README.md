@@ -78,7 +78,11 @@ A* works with the use of a priority queue to sort all possible choices based on 
 
 The code works by checking all possible sucessors of the current state and pushing them into a priority queue. The next node to be visited is based on whatever is at the head of the queue. Thus, all possible nodes are being considered, but the next action is based on whatever is the best towards the goal state.
 
-## 8. Find Path to Closest Dot: Implement the function findPathToClosestDot in searchAgents.py. This function should guide Pacman to the nearest dot.
+## 8. Find Path to Closest Dot: 
+
+Implement the function findPathToClosestDot in searchAgents.py. This function should guide Pacman to the nearest dot.
+It checks whether current state has food or not. It then checks for the next valid steps through **getSuccessor** method. Finally, it uses BFS to find the next closest dot. This doesn't account for the global goal and is only useful for finding the next closest dot, so should suffice as a suboptimal, greedy solution to finding the next closest dot. 
+
 Run ClosestDotSearchAgent with:
 ```
 python pacman.py -l bigSearch -p ClosestDotSearchAgent -z .5
