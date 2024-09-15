@@ -37,6 +37,10 @@ python pacman.py -l tinyMaze -p SearchAgent
 python pacman.py -l mediumMaze -p SearchAgent
 python pacman.py -l bigMaze -z .5 -p SearchAgent
 ```
+Test DFS with Autograder:
+```
+python autograder.py -q q1
+```
 <img width="753" alt="Screenshot 2024-09-12 at 2 49 08 PM" src="https://github.com/user-attachments/assets/13654c85-39eb-4a15-89c0-d9e785da136a">
 
 <img width="1112" alt="Screenshot 2024-09-12 at 2 44 35 PM" src="https://github.com/user-attachments/assets/5a3157ef-87f7-4ea9-a48f-6bf141beaa1d">
@@ -52,6 +56,11 @@ Test using the following 'fn=bfs':
 python pacman.py -l tinyMaze -p SearchAgent -a fn=bfs
 python pacman.py -l mediumMaze -p SearchAgent -a fn=bfs
 python pacman.py -l bigMaze -p SearchAgent -a fn=bfs -z .5
+```
+
+Test BFS with Autograder:
+```
+python autograder.py -q q2
 ```
 You should see something like this: 
 
