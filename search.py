@@ -156,10 +156,6 @@ def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic):
 
     costs = {start: 0}
 
-    visited = set()
-
-    visited.add(start)
-
     # For every node in the queue, obtain it, check if its the goal, then add its sucessors to the queue
     while not aStarQueue.isEmpty():
         current_state, actions, current_cost  = aStarQueue.pop()
