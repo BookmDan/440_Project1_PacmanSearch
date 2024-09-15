@@ -63,11 +63,14 @@ As predicted, the BFS search takes a more wide-net search approach, first explor
 
 Implement the A* search algorithm in aStarSearch in search.py. A* uses a heuristic function, such as nullHeuristic.
 
-Run A* with the following command:
+Run A* with the corresponding fn=astar,heuristic=manhattanHeuristic:
 ```
 python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic --frameTime=0
+python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=euclideanHeuristic --frameTime=0
 
 ```
+Note: You can run A* search without a heuristic as jsut fn=astar. However, this would be a uniformCost search algorithm instead. If another heuristic is implemented, that may be used as well. For instance, euclideanHeuristic is another possible heuristic.
+
 Test A* with:
 ```
 python autograder.py -q q4
