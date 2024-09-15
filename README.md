@@ -45,7 +45,7 @@ It does seem to deeply explore one path before backtracking and consistently exp
 
 We expected a solution length of 130. For the mediumMaze we got a length of 146.
 
-##2. Breadth-First Search
+## 2. Breadth-First Search
 
 Test using the following 'fn=bfs':
 ```
