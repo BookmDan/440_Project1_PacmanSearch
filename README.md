@@ -90,7 +90,7 @@ It checks whether current state has food or not. It then checks for the next val
 
 Run ClosestDotSearchAgent with:
 ```
-python pacman.py -l bigSearch -p ClosestDotSearchAgent -z .5
+python pacman.py -l bigSearch -p ClosestDotSearchAgent -z .5 --frameTime=0
 ```
 
 Test the Closest Dot Search Agent:
